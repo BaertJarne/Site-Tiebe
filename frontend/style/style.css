@@ -1,0 +1,151 @@
+/*---------------------------------------/*
+ # SETTINGS
+/*---------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #d0ddf5;
+}
+
+/*---------------------------------------/*
+ # GENERIC
+/*---------------------------------------*/
+
+/*---------------------------------------/*
+ # ELEMENTS
+/*---------------------------------------*/
+
+/*---------------------------------------/*
+ # OBJECTS
+/*---------------------------------------*/
+
+.o-main {
+    margin: 0 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.o-footer{
+    margin: 3rem 0rem
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+/*---------------------------------------/*
+ # COMPONENTS
+/*---------------------------------------*/
+
+.c-hoofd {
+    font-size: 3rem;
+    margin: 2rem 0 5rem 0;
+}
+
+.c-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 2rem;
+}
+
+.c-grid_1{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.c-img {
+    border-radius: 2rem;
+    max-width: 31.25rem;
+}
+
+.c-img_1 {
+    border-radius: 2rem;
+    max-width: 62.5rem;
+}
+
+.c-right__grid {
+    justify-self: end;
+}
+
+.c-grid__content {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.c-tekst {
+    max-width: 31.25rem;
+    font-size: 1rem;
+}
+
+.c-tekst_1 {
+    font-size: 1rem;
+    max-width: 62.5rem;
+}
+
+.c-left__grid {
+    justify-self: start;
+}
+
+.c-button {
+
+    color: #d0ddf5;
+    padding: .5rem 1rem;
+    background-color: #7caaff;
+    border-radius: 1rem;
+}
+
+.c-button__add {
+    position: fixed;
+    display: inline-block;
+    right: 2rem;
+    bottom: 2rem;
+
+    font-size: 1.5rem;
+    border-radius: 1rem;
+}
+
+.c-button__terug {
+    border-radius: 1rem;
+}
+
+.c-info {
+    display: flex;
+    justify-content: center;
+}
+
+.c-info__tekst {
+    text-align: left;
+    max-width: 31.25rem;
+    margin-bottom: 2rem;
+    padding: center;
+}
+
+.c-form {
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+.c-form__label {
+    margin-right: 1rem;
+}
+
+.c-form_element {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.c-form__textaere {
+    vertical-align: top;
+}
+
+/*---------------------------------------/*
+ # UTILITIES
+/*---------------------------------------*/
