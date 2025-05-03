@@ -4,7 +4,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
     text-align: center;
     background-color: #d0ddf5;
 }
@@ -50,27 +50,30 @@ h2{
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     gap: 2rem;
+    width: 100%;
 }
 
 .c-grid_1{
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+    justify-items: center;
     gap: 2rem;
+}
+
+.c-grid__span2{
+    grid-column: span 2;
 }
 
 .c-img {
     border-radius: 2rem;
     max-width: 31.25rem;
+    min-width: 15rem;
 }
 
 .c-img_1 {
     border-radius: 2rem;
     max-width: 62.5rem;
-}
-
-.c-right__grid {
-    justify-self: end;
 }
 
 .c-grid__content {
@@ -80,16 +83,20 @@ h2{
 
 .c-tekst {
     max-width: 31.25rem;
-    font-size: 1rem;
 }
 
 .c-tekst_1 {
-    font-size: 1rem;
     max-width: 62.5rem;
+}
+
+.c-right__grid {
+    justify-self: end;
+    text-align: left;
 }
 
 .c-left__grid {
     justify-self: start;
+    text-align: left;
 }
 
 .c-button {
