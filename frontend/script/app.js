@@ -41,17 +41,17 @@ const showFotosTeksten = () => {
 
     if (list_tekst_foto[2] == 0) {
       output += `<article class="o-main__article c-grid">
-                  <img class="c-img c-right__grid c-grid__content" src="img/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                  <img class="c-img c-right__grid c-grid__content" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
                   <p class="c-tekst c-left__grid c-grid__content">${list_tekst_foto[0]}</p>
                 </article>`;
     } else if (list_tekst_foto[2] == 1) {
       output += `<article class="o-main__article c-grid">
                   <p class="c-tekst c-right__grid c-grid__content">${list_tekst_foto[0]}</p>
-                  <img class="c-img c-left__grid c-grid__content" src="img/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                  <img class="c-img c-left__grid c-grid__content" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
                 </article>`;
     } else if (list_tekst_foto[2] == 2) {
       output += `<article class="o-main__article c-grid_1">
-                  <img class="c-img_1 c-grid__content" src="img/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                  <img class="c-img_1 c-grid__content" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
                 </article>`;
     } else if (list_tekst_foto[2] == 3) {
       output += `<article class="o-main__article c-grid_1">
@@ -153,12 +153,15 @@ const addFotoTekst = async () => {
 
   if ((tekst || img.value) != '') {
     if (img.value != '') {
-      // let filenaam = '';
-      const filenaam = await getPostFotoToFolder(img.files[0]);
-      // console.log(filenaam);
-      const allPaths = await GetPostFotoToDB(filenaam);
-      // console.log(tekst)
-      // console.log(allPaths)
+      let allPaths
+      for (const file of img.files) {
+        // let filenaam = '';
+        const filenaam = await getPostFotoToFolder(file);
+        // console.log(filenaam);
+        allPaths = await GetPostFotoToDB(filenaam);
+        // console.log(tekst)
+        // console.log(allPaths)
+      }
       if (tekst != '') {
         let nieuwID = 0;
         for (let path of allPaths) {

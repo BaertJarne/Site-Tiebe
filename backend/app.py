@@ -56,7 +56,7 @@ async def teksten():
 @app.post(ENDPOINT + 'fotoToFolder/')
 async def upload_image(file: UploadFile = File(...)):
     # Bepaal de locatie waar het bestand wordt opgeslagen
-    file_location = os.path.join(os.path.dirname(__file__), '../frontend/img', file.filename)
+    file_location = os.path.join(os.path.dirname(__file__), '../frontend/img/met_db', file.filename)
     # Controleer of de map bestaat, zo niet, maak deze aan
     os.makedirs(os.path.dirname(file_location), exist_ok=True)
     # Sla het bestand op

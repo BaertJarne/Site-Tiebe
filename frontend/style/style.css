@@ -52,6 +52,7 @@ svg {
 
 .c-hoofd {
     font-size: 3rem;
+    margin: 5rem;
 }
 
 .c-grid {
@@ -72,6 +73,7 @@ svg {
 
 .c-grid__span2 {
     grid-column: span 2;
+    justify-self: center;
 }
 
 .c-img {
@@ -82,7 +84,7 @@ svg {
 
 .c-img_1 {
     border-radius: 2rem;
-    max-width: 62.5rem;
+    max-height: 37.5rem;
 }
 
 .c-grid__content {
@@ -128,6 +130,9 @@ svg {
 
 .c-button__terug {
     border-radius: 1rem;
+    background-color: #d0ddf5;
+    color: #5691ff;
+    border-color: #bbd2fc;
 }
 
 .c-info {
@@ -162,7 +167,7 @@ svg {
     vertical-align: top;
 }
 
-@media (width < 768px) {
+@media (width < 912px) {
 
     *,
     *:before,
@@ -170,7 +175,7 @@ svg {
         box-sizing: border-box;
         padding: 0;
         margin: 0;
-        font-size: .75rem;
+        font-size: 1rem;
         text-align: center;
         background-color: #d0ddf5;
         max-width: 100%;
@@ -183,7 +188,7 @@ svg {
     textarea {
         resize: horizontal;
         max-width: fit-content;
-     }
+    }
 
     .o-main {
         margin: 0 2rem;
@@ -194,6 +199,10 @@ svg {
 
     .o-footer {
         margin-bottom: 6rem;
+    }
+
+    .c-hoofd {
+        margin: 0rem;
     }
 
     .c-grid {
@@ -219,6 +228,10 @@ svg {
     }
 
     .c-tekst {
+        max-width: 22.5rem;
+    }
+
+    .c-info__tekst{
         max-width: 22.5rem;
     }
 }
