@@ -19,37 +19,30 @@
         </svg>
     </h1>
     <div class="c-info">
-        <p class="c-info__tekst"> Tiebe Blanckaert is op 30 juli 2024 om het leven gekomen.
-            <br>
-            Tiebe was opweg naar zijn werk toen hij hier op dit kruispunt de straat over wou steken. Wanneer hij de straat aan het oversteken is komt er onverwachts een auto.
-            <br>
-            Om Tiebe te herdenken kan u hier een tekstje of enkele foto's nalaten.
+        <p class="c-info__tekst">Tiebe Blanckaert overleed op 30 juli 2024 door een fietsongeval. Hij werd 18 jaar.<br>Een leeftijd waarop de wereld openligt,<br>waar dromen vleugels krijgen<br>en alles nog mag beginnen. <br><br>Als je nog een foto of bericht wil nalaten, kan je dat hier doen.
         </p>
     </div>
     <main class="o-main">
-        <fieldset class="c-form">
-            <legend>Nieuwe foto's/ tekst toevoegen</legend>
+        <form class="c-form">
+            <!-- <legend>Nieuwe foto's/ tekst toevoegen</legend> -->
             <div class="c-form_element">
                 <label class="c-form__label" for="myfile">Upload foto's:</label>
                 <input class="c-form__nieuw js-form__file" type="file" multiple id="myfile" name="myfile" accept=".jpg, .png, .jpeg">
             </div>
             <div class="c-form_element">
-                <label class="c-form__label" for="mytekst">Teskstje:</label>
-                <textarea class="c-form__nieuw c-form__textaere js-form__textarea" rows="5" cols="80" name="mytekst" id="mytekst" placeholder="Laat nog een bericht na indien je dat wenst."></textarea>
+                <label class="c-form__label" for="mytekst">Tekstje:</label>
+                <textarea class="c-form__nieuw c-form__textaere js-form__textarea" rows="5" name="mytekst" id="mytekst" placeholder="Laat nog een bericht na indien je dat wenst."></textarea>
             </div>
 
             <div class="c-form_element">
                 <input class="c-button js-form__button-add" type="submit" value="Voeg toe" name="vrd">
+                <button class="c-button c-button__terug">
+                    ga terug
+                </button>
             </div>
-        </fieldset>
+        </form>
     </main>
-    <footer class="o-footer">
-        <a href="index.html">
-            <button class="c-button c-button__terug">
-                ga terug
-            </button>
-        </a>
-    </footer>
+
 </body>
 
 </html>

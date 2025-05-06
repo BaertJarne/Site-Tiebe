@@ -111,11 +111,11 @@ svg {
 }
 
 .c-button {
-
     color: #d0ddf5;
     padding: .5rem 1rem;
     background-color: #7caaff;
     border-radius: 1rem;
+    border-style: solid;
 }
 
 .c-button__add {
@@ -131,8 +131,8 @@ svg {
 .c-button__terug {
     border-radius: 1rem;
     background-color: #d0ddf5;
-    color: #5691ff;
-    border-color: #bbd2fc;
+    color: #7caaff;
+    border-color: #a0c2ff;
 }
 
 .c-info {
@@ -141,7 +141,7 @@ svg {
 }
 
 .c-info__tekst {
-    text-align: left;
+    /* text-align: left; */
     max-width: 31.25rem;
     margin-bottom: 2rem;
     padding: center;
@@ -155,16 +155,21 @@ svg {
 }
 
 .c-form__label {
+    display: block;
+    margin-bottom: 1rem;
     margin-right: 1rem;
 }
 
-.c-form_element {
+.c-form__nieuw {
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .c-form__textaere {
     vertical-align: top;
+    width: calc(100% - 4rem);
+    margin: 2rem;
+    margin-top: 0rem;
 }
 
 @media (width < 912px) {
@@ -183,11 +188,6 @@ svg {
 
     svg {
         scale: 1;
-    }
-
-    textarea {
-        resize: horizontal;
-        max-width: fit-content;
     }
 
     .o-main {
