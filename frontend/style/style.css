@@ -154,10 +154,15 @@ svg {
     padding-top: 1rem;
 }
 
+.c-form__element{
+    justify-items: center;
+}
+
 .c-form__label {
     display: block;
     margin-bottom: 1rem;
     margin-right: 1rem;
+    font-weight: 700;
 }
 
 .c-form__nieuw {
@@ -170,6 +175,21 @@ svg {
     width: calc(100% - 4rem);
     margin: 2rem;
     margin-top: 0rem;
+}
+
+.omkader{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 2rem;
+    width: fit-content;
+}
+
+.back-white{
+    background-color: white;
+}
+
+.strong{
+    font-weight: 700;
 }
 
 @media (width < 912px) {

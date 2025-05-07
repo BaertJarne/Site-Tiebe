@@ -40,22 +40,30 @@ const showFotosTeksten = () => {
     console.log(list_tekst_foto);
 
     if (list_tekst_foto[2] == 0) {
-      output += `<article class="o-main__article c-grid">
-                  <img class="c-img c-right__grid c-grid__content" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
-                  <p class="c-tekst c-left__grid c-grid__content">${list_tekst_foto[0]}</p>
+      output += `<article class="o-main__article">
+                  <div class="omkader c-grid">
+                    <img class="c-img c-right__grid c-grid__content back-white" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                    <p class="c-tekst c-left__grid c-grid__content back-white">${list_tekst_foto[0]}</p>
+                  </div>
                 </article>`;
     } else if (list_tekst_foto[2] == 1) {
-      output += `<article class="o-main__article c-grid">
-                  <p class="c-tekst c-right__grid c-grid__content">${list_tekst_foto[0]}</p>
-                  <img class="c-img c-left__grid c-grid__content" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+      output += `<article class="o-main__article">
+                  <div class="omkader c-grid">
+                    <p class="c-tekst c-right__grid c-grid__content back-white">${list_tekst_foto[0]}</p>
+                    <img class="c-img c-left__grid c-grid__content back-white" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                  </div>
                 </article>`;
     } else if (list_tekst_foto[2] == 2) {
       output += `<article class="o-main__article c-grid_1">
-                  <img class="c-img_1 c-grid__content" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                  <div class="omkader">
+                    <img class="c-img_1 c-grid__content back-white" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                  </div>
                 </article>`;
     } else if (list_tekst_foto[2] == 3) {
       output += `<article class="o-main__article c-grid_1">
-                  <p class="c-tekst_1 c-grid__content">${list_tekst_foto[0]}</p>
+                  <div class="omkader">
+                    <p class="c-tekst_1 c-grid__content back-white">${list_tekst_foto[0]}</p>
+                  </div>
                 </article>`;
     } else {
       console.log('foute mogelijkheid');
@@ -69,7 +77,12 @@ const showFotosTeksten = () => {
 
 // #region ***  Callback-No Visualisation - callback___  ***********
 const callbackAdd = () => {
-  console.log("Foto's en/of tekst is sucsesvol toegevoegd");
+  console.log("Foto's en/of tekst is sucsesvol toegevoegd.");
+  window.location.href = 'index.html';
+};
+
+const callbackBack = () => {
+  console.log('u zal sucsesvol worden teruggestuurd naar de hoofdpagina.');
   window.location.href = 'index.html';
 };
 // #endregion
@@ -153,7 +166,7 @@ const addFotoTekst = async () => {
 
   if ((tekst || img.value) != '') {
     if (img.value != '') {
-      let allPaths
+      let allPaths;
       for (const file of img.files) {
         // let filenaam = '';
         const filenaam = await getPostFotoToFolder(file);
@@ -176,7 +189,7 @@ const addFotoTekst = async () => {
     }
     callbackAdd();
   }
-  listenToAdd();
+  listenTo();
 };
 
 const combineFotosWithTekst = () => {
@@ -208,8 +221,9 @@ const combineFotosWithTekst = () => {
 // #endregion
 
 // #region ***  Event Listeners - listenTo___            ***********
-const listenToAdd = () => {
+const listenTo = () => {
   htmlFormAdd.addEventListener('click', addFotoTekst);
+  document.querySelector('.js-form__button-back').addEventListener('click', callbackBack);
 };
 
 const listenToSocket = () => {
@@ -248,7 +262,7 @@ const init = () => {
   if (htmlPagAdd) {
     console.log('Add pagina');
     htmlFormAdd = document.querySelector('.js-form__button-add');
-    listenToAdd();
+    listenTo();
   }
 };
 
