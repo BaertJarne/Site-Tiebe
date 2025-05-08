@@ -150,6 +150,7 @@ svg {
 .c-form {
     display: block;
     text-align: center;
+    justify-items: center;
     margin-bottom: 2rem;
     padding-top: 1rem;
 }
