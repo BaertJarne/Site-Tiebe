@@ -42,7 +42,7 @@ const showFotosTeksten = () => {
     if (list_tekst_foto[2] == 0) {
       output += `<article class="o-main__article">
                   <div class="omkader c-grid">
-                    <img class="c-img c-right__grid c-grid__content back-white" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                    <img class="c-img c-right__grid c-grid__content back-white" src="${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
                     <p class="c-tekst c-left__grid c-grid__content back-white">${list_tekst_foto[0]}</p>
                   </div>
                 </article>`;
@@ -50,13 +50,13 @@ const showFotosTeksten = () => {
       output += `<article class="o-main__article">
                   <div class="omkader c-grid">
                     <p class="c-tekst c-right__grid c-grid__content back-white">${list_tekst_foto[0]}</p>
-                    <img class="c-img c-left__grid c-grid__content back-white" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                    <img class="c-img c-left__grid c-grid__content back-white" src="${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
                   </div>
                 </article>`;
     } else if (list_tekst_foto[2] == 2) {
       output += `<article class="o-main__article c-grid_1">
                   <div class="omkader">
-                    <img class="c-img_1 c-grid__content back-white" src="img/met_db/${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
+                    <img class="c-img_1 c-grid__content back-white" src="${list_tekst_foto[1]}" alt="Foto Tiebe Blanckaert">
                   </div>
                 </article>`;
     } else if (list_tekst_foto[2] == 3) {
