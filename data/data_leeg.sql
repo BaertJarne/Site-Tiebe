@@ -29,7 +29,7 @@ CREATE TABLE `tblfoto_paden` (
   `paden` varchar(250) NOT NULL,
   PRIMARY KEY (`idfoto_paden`),
   UNIQUE KEY `idfoto_paden_UNIQUE` (`idfoto_paden`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,7 +54,7 @@ CREATE TABLE `tbltekst` (
   `idfoto` int DEFAULT NULL,
   PRIMARY KEY (`idtekst`),
   UNIQUE KEY `idtekst_UNIQUE` (`idtekst`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

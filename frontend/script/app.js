@@ -200,9 +200,9 @@ const combineFotosWithTekst = () => {
   for (const tekst of tekstenCopy) {
     const random_number = Math.floor(Math.random() * 2);
     if (tekst.idfoto != 0) {
-      console.log(fotosCopy)
-      console.log(tekst.idfoto)
-      console.log(fotosCopy[tekst.idfoto - 1].paden)
+      // console.log(fotosCopy)
+      // console.log(tekst.idfoto)
+      // console.log(fotosCopy[tekst.idfoto - 1].paden)
       combined.push([tekst.tekstje, fotosCopy[tekst.idfoto - 1].paden, random_number]);
       fotosToDel.push(fotosCopy[tekst.idfoto - 1]);
     } else {
