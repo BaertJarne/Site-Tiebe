@@ -1,5 +1,5 @@
 'use strict';
-const lanIP = `${window.location.hostname}:8000`;
+const lanIP = `inmemoryoftiebe.onrender.com`;
 const socketio = io(lanIP);
 
 // #region ***  DOM references                           ***********
