@@ -1,5 +1,4 @@
 tiebe/
 venv_tiebe/
 __pycache__/
-config.py
 .DS_Store

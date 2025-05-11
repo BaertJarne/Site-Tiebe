@@ -179,7 +179,6 @@ svg {
 
 .c-form__textaere {
     vertical-align: top;
-    max-width: 61rem;
     width: calc(100% - 4rem);
     margin: 2rem;
     margin-top: 0rem;
