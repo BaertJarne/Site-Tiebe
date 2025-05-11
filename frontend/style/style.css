@@ -115,11 +115,12 @@ svg {
 }
 
 .c-button {
-    color: #d0ddf5;
+    color: #ffffff;
     padding: .5rem 1rem;
     background-color: #7caaff;
     border-radius: 1rem;
-    border-style: solid;
+    border-style: none;
+    box-shadow: .125rem .125rem .075rem rgba(158, 192, 255, 0.85);
 }
 
 .c-button__add {
@@ -135,6 +136,7 @@ svg {
 .c-button__terug {
     border-radius: 1rem;
     background-color: #d0ddf5;
+    border-style: solid;
     color: #7caaff;
     border-color: #a0c2ff;
 }
@@ -186,7 +188,7 @@ svg {
 
 .omkader{
     background-color: rgba(255, 255, 255, 1);
-    box-shadow: .75rem .75rem .25rem rgba(255, 255, 255, .85);
+    box-shadow: .25rem .25rem .25rem rgba(158, 192, 255, 0.85);
     padding: 2rem;
     border-radius: 2rem;
     /* width: fit-content; */
