@@ -14,8 +14,10 @@
     margin: 0;
     font-size: 1.25rem;
     text-align: center;
+    justify-items: center;
     background-color: #d0ddf5;
     max-width: 100%;
+    font-family: Helvetica;
 }
 
 
@@ -40,6 +42,7 @@
 
 h2 {
     font-size: 1.5rem;
+    /* width: 17.5rem; */
 }
 
 svg {
@@ -57,10 +60,11 @@ svg {
 
 .c-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto auto;
     justify-content: center;
     gap: 2rem;
     width: 100%;
+    max-width: 67.5rem;
 }
 
 .c-grid_1 {
@@ -78,7 +82,7 @@ svg {
 
 .c-img {
     border-radius: 2rem;
-    max-width: 31.25rem;
+    max-width: 32.5rem;
     min-width: 15rem;
 }
 
@@ -93,11 +97,11 @@ svg {
 }
 
 .c-tekst {
-    max-width: 31.25rem;
+    max-width: 32.5rem;
 }
 
 .c-tekst_1 {
-    max-width: 62.5rem;
+    max-width: 65rem;
 }
 
 .c-right__grid {
@@ -142,7 +146,7 @@ svg {
 
 .c-info__tekst {
     /* text-align: left; */
-    max-width: 31.25rem;
+    max-width: 65rem;
     margin-bottom: 2rem;
     padding: center;
 }
@@ -153,10 +157,12 @@ svg {
     justify-items: center;
     margin-bottom: 2rem;
     padding-top: 1rem;
+    width: 80svw;
 }
 
 .c-form__element{
     justify-items: center;
+    width: 100%;
 }
 
 .c-form__label {
@@ -173,16 +179,18 @@ svg {
 
 .c-form__textaere {
     vertical-align: top;
+    max-width: 61rem;
     width: calc(100% - 4rem);
     margin: 2rem;
     margin-top: 0rem;
 }
 
 .omkader{
-    background-color: white;
-    padding: 1rem;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: .75rem .75rem .25rem rgba(255, 255, 255, .85);
+    padding: 2rem;
     border-radius: 2rem;
-    width: fit-content;
+    /* width: fit-content; */
 }
 
 .back-white{
@@ -219,7 +227,7 @@ svg {
     }
 
     .o-footer {
-        margin-bottom: 6rem;
+        padding-bottom: 3rem;
     }
 
     .c-hoofd {
