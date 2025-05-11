@@ -8,7 +8,8 @@ class Database:
     @staticmethod
     def __open_connection():
         try:
-            db = connector.connect(option_files=os.path.abspath(os.path.join(os.path.dirname(__file__), "../config.py")), autocommit=False)
+            db = connector.connect(host=os.getenv("DB_HOST"), user=os.getenv("DB_USER"), password=os.getenv("DB_PASSWORD"), database=os.getenv("DB_NAME"), port=int(os.getenv("DB_PORT", 3306)),  autocommit=False)
+            
             if "AttributeError" in (str(type(db))):
                 raise Exception("\033[0mFoutieve database parameters in config\033[0m")
             cursor = db.cursor(dictionary=True, buffered=True)  # lazy loaded
