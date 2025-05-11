@@ -21,13 +21,16 @@ class Database:
                 print("\033[0mError: De database is niet gevonden\033[0m")
             else:
                 print(err)
-            return
+            return None, None
 
     # 2. Executes READS
     @staticmethod
     def get_rows(sqlQuery, params=None):
         result = None
         db, cursor = Database.__open_connection()
+        if not db or not cursor:
+            print("dataverbinding is mislukt.")
+            return None
         try:
             cursor.execute(sqlQuery, params)
             result = cursor.fetchall()
@@ -44,6 +47,9 @@ class Database:
     @staticmethod
     def get_one_row(sqlQuery, params=None):
         db, cursor = Database.__open_connection()
+        if not db or not cursor:
+            print("dataverbinding is mislukt.")
+            return None
         try:
             cursor.execute(sqlQuery, params)
             result = cursor.fetchone()
@@ -62,6 +68,9 @@ class Database:
     def execute_sql(sqlQuery, params=None):
         result = None
         db, cursor = Database.__open_connection()
+        if not db or not cursor:
+            print("dataverbinding is mislukt.")
+            return None
         try:
             cursor.execute(sqlQuery, params)
             db.commit()
