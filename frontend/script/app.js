@@ -89,7 +89,7 @@ const callbackBack = () => {
 
 // #region ***  Data Access - get___                     ***********
 const GetFotos = async () => {
-  const url = `http://${lanIP}/api/v1/foto/`;
+  const url = `https://${lanIP}/api/v1/foto/`;
   const response = await fetch(url).catch((err) => console.error('Fetch-error:', err));
   console.log(response);
   const json = await response.json().catch((err) => console.error('JSON-error:', err));
@@ -99,7 +99,7 @@ const GetFotos = async () => {
 };
 
 const GetTeksten = async () => {
-  const url = `http://${lanIP}/api/v1/tekst/`;
+  const url = `https://${lanIP}/api/v1/tekst/`;
   const response = await fetch(url).catch((err) => console.error('Fetch-error:', err));
   const json = await response.json().catch((err) => console.error('JSON-error:', err));
   teksten = json;
@@ -114,7 +114,7 @@ const getPostFotoToFolder = async (foto) => {
   // paden: foto,
   // });
 
-  const url = `http://${lanIP}/api/v1/fotoToFolder/`;
+  const url = `https://${lanIP}/api/v1/fotoToFolder/`;
   const response = await fetch(url, {
     method: 'POST',
     // headers: { 'Content-Type': 'application/json' },
@@ -130,7 +130,7 @@ const GetPostFotoToDB = async (naam) => {
     paden: naam,
   });
 
-  const url = `http://${lanIP}/api/v1/fotoToDB/`;
+  const url = `https://${lanIP}/api/v1/fotoToDB/`;
   console.log(body, url);
   const response = await fetch(url, {
     method: 'POST',
@@ -149,7 +149,7 @@ const GetPostTekst = async (tekst, idfoto) => {
     idfoto: idfoto,
   });
 
-  const url = `http://${lanIP}/api/v1/tekstje/`;
+  const url = `https://${lanIP}/api/v1/tekstje/`;
   const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
