@@ -122,7 +122,7 @@ const getPostFotoToFolder = async (foto) => {
   }).catch((err) => console.error('Fetch-error:', err));
   const json = await response.json().catch((err) => console.error('JSON-error:', err));
   // console.log(json.name);
-  return json.name;
+  return json.url;
 };
 
 const GetPostFotoToDB = async (naam) => {
@@ -171,7 +171,7 @@ const addFotoTekst = async () => {
         // let filenaam = '';
         const filenaam = await getPostFotoToFolder(file);
         console.log(filenaam);
-        allPaths = await GetPostFotoToDB(filenaam.url);
+        allPaths = await GetPostFotoToDB(filenaam);
         // console.log(tekst)
         // console.log(allPaths)
       }
