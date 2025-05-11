@@ -1,12 +1,16 @@
-from fastapi import FastAPI, HTTPException, status, File, UploadFile
+from fastapi import FastAPI, HTTPException, status, File, UploadFile, APIRouter
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from repositories.DataRepository import DataRepository
 import socketio
 from models.models import foto, tekst, DTOFotoToDB, DTOTekst, DTOFotoToFolder
 import os
+import cloudinary
+import cloudinary.uploader
 
 ENDPOINT = "/api/v1/"
+
+cloudinary.config(cloud_name = os.getenv("CL_NAME"), api_key = os.getenv("CL_API"), api_secret = os.getenv("CL_SECRET"))
 
 app = FastAPI(title="In memory of Tiebe", debug=True, description="In memory of Tiebe", version="1.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"],)
@@ -53,16 +57,35 @@ async def teksten():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="teksten niet gevonden")
     return data
 
-@app.post(ENDPOINT + 'fotoToFolder/')
-async def upload_image(file: UploadFile = File(...)):
+# @app.post(ENDPOINT + 'fotoToFolder/')
+# async def upload_image(file: UploadFile = File(...)):
     # Bepaal de locatie waar het bestand wordt opgeslagen
-    file_location = os.path.join(os.path.dirname(__file__), '../frontend/img/met_db', file.filename)
+    # file_location = os.path.join(os.path.dirname(__file__), '../frontend/img/met_db', file.filename)
+   
     # Controleer of de map bestaat, zo niet, maak deze aan
-    os.makedirs(os.path.dirname(file_location), exist_ok=True)
+    # os.makedirs(os.path.dirname(file_location), exist_ok=True)
+   
     # Sla het bestand op
-    with open(file_location, "wb") as f:
-        f.write(await file.read())
-    return {"info": f"file '{file.filename}' saved at '{file_location}'", 'name': file.filename}
+    # with open(file_location, "wb") as f:
+    #     f.write(await file.read())
+    # upload_result = cloudinary.uploader.upload(file.read())
+    # img_url = upload_result[""]
+    # return {"info": f"file '{file.filename}' saved at '{file_location}'", 'name': file.filename}
+
+@router.post(ENDPOINT + 'fotoToFolder/')
+async def upload_image(file: UploadFile = File(...)):
+    try:
+        # Upload naar Cloudinary
+        upload_result = cloudinary.uploader.upload(file.file)
+        img_url = upload_result.get("secure_url")
+ 
+        return {
+            "message": f"Afbeelding '{file.filename}' succesvol geüpload.",
+            "url": img_url,
+            "name": file.filename
+        }
+    except Exception as e:
+        return {"error": str(e)}
 
 @app.post(ENDPOINT + 'fotoToDB/', response_model=dict, status_code=status.HTTP_201_CREATED, summary="Foto toevoegen aan database")
 async def nieuw_fotot(Foto: DTOFotoToDB):
