@@ -170,8 +170,8 @@ const addFotoTekst = async () => {
       for (const file of img.files) {
         // let filenaam = '';
         const filenaam = await getPostFotoToFolder(file);
-        // console.log(filenaam);
-        allPaths = await GetPostFotoToDB(filenaam);
+        console.log(filenaam);
+        allPaths = await GetPostFotoToDB(filenaam.url);
         // console.log(tekst)
         // console.log(allPaths)
       }

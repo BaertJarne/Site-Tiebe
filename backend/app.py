@@ -78,7 +78,7 @@ async def upload_image(file: UploadFile = File(...)):
         # Upload naar Cloudinary
         upload_result = cloudinary.uploader.upload(file.file)
         img_url = upload_result.get("secure_url")
-        print(img_url)
+        # print(img_url)
  
         return {
             "message": f"Afbeelding '{file.filename}' succesvol geüpload.",
