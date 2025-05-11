@@ -72,7 +72,7 @@ async def teksten():
     # img_url = upload_result[""]
     # return {"info": f"file '{file.filename}' saved at '{file_location}'", 'name': file.filename}
 
-@router.post(ENDPOINT + 'fotoToFolder/')
+@app.post(ENDPOINT + 'fotoToFolder/')
 async def upload_image(file: UploadFile = File(...)):
     try:
         # Upload naar Cloudinary
