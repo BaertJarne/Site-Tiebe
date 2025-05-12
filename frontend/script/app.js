@@ -168,7 +168,7 @@ const addFotoTekst = async () => {
   if ((tekst || img.value) != '') {
     if (img.value != '') {
       let allPaths;
-      for (const i = 0; i <= img.files.length; i++) {
+      for (let i = 0; i <= img.files.length; i++) {
         const file = img.files[i]
         console.log('voor remove u-hide')
         document.querySelector('.js-tekst__fotoupload').classList.remove('u-hide');
