@@ -202,6 +202,14 @@ svg {
     font-weight: 700;
 }
 
+.u-hide{
+    display: none;
+}
+
+.c-tekst__fotoupload{
+    padding-top: 2rem;
+}
+
 @media (width < 912px) {
 
     *,

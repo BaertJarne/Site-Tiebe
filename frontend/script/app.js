@@ -107,7 +107,8 @@ const GetTeksten = async () => {
   showFotosTeksten();
 };
 
-const getPostFotoToFolder = async (foto) => {
+const getPostFotoToFolder = async (foto, info_fotos) => {
+  document.querySelector('.js-tekst__fotoupload').innerHTML = `Foto('s) worden toegevoegd ${info_fotos[0]}/${info_fotos[1]}. Blijf op deze pagina.`;
   const formData = new FormData();
   formData.append('file', foto);
   // const body = JSON.stringify({
@@ -168,12 +169,14 @@ const addFotoTekst = async () => {
     if (img.value != '') {
       let allPaths;
       for (const file of img.files) {
+        document.querySelector('js-tekst__fotoupload').classList.remove('u-hide');
         // let filenaam = '';
-        const filenaam = await getPostFotoToFolder(file);
-        console.log(filenaam);
+        const filenaam = await getPostFotoToFolder(img.indexOf(file)+1, [1, img.length]);
+        // console.log(filenaam);
         allPaths = await GetPostFotoToDB(filenaam);
         // console.log(tekst)
         // console.log(allPaths)
+        document.querySelector('js-tekst__fotoupload').classList.add('u-hide');
       }
       if (tekst != '') {
         let nieuwID = 0;
