@@ -169,14 +169,17 @@ const addFotoTekst = async () => {
     if (img.value != '') {
       let allPaths;
       for (const file of img.files) {
-        document.querySelector('js-tekst__fotoupload').classList.remove('u-hide');
+        console.log('voor remove u-hide')
+        document.querySelector('.js-tekst__fotoupload').classList.remove('u-hide');
+        console.log('na remove u-hide. img nmr:')
+        console.log(img.indexOf(file)+1)
         // let filenaam = '';
         const filenaam = await getPostFotoToFolder(img.indexOf(file)+1, [1, img.length]);
         // console.log(filenaam);
         allPaths = await GetPostFotoToDB(filenaam);
         // console.log(tekst)
         // console.log(allPaths)
-        document.querySelector('js-tekst__fotoupload').classList.add('u-hide');
+        document.querySelector('.js-tekst__fotoupload').classList.add('u-hide');
       }
       if (tekst != '') {
         let nieuwID = 0;
