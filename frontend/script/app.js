@@ -163,7 +163,7 @@ const GetPostTekst = async (tekst, idfoto) => {
 const addFotoTekst = async () => {
   const tekst = document.querySelector('.js-form__textarea').value;
   const img = document.querySelector('.js-form__file');
-  console.log(img);
+  console.log(img.files);
 
   if ((tekst || img.value) != '') {
     if (img.value != '') {
@@ -172,7 +172,7 @@ const addFotoTekst = async () => {
         console.log('voor remove u-hide')
         document.querySelector('.js-tekst__fotoupload').classList.remove('u-hide');
         console.log('na remove u-hide. img nmr:')
-        console.log(img.indexOf(file)+1)
+        console.log(img.files.indexOf(file)+1)
         // let filenaam = '';
         const filenaam = await getPostFotoToFolder(img.indexOf(file)+1, [1, img.length]);
         // console.log(filenaam);
