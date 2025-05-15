@@ -71,6 +71,7 @@ const showFotosTeksten = () => {
   }
 
   // console.log(output);
+  document.querySelector('.js-loading').classList.add('u-hide')
   document.querySelector('.js-fotos-tekst').innerHTML = output;
 };
 // #endregion
@@ -173,9 +174,9 @@ const addFotoTekst = async () => {
         console.log('voor remove u-hide')
         document.querySelector('.js-tekst__fotoupload').classList.remove('u-hide');
         console.log('na remove u-hide. [img nmr, aantal fotos]:')
-        console.log([i+1, img.files.length])
+        console.log([i + 1, img.files.length])
         // let filenaam = '';
-        const filenaam = await getPostFotoToFolder(file, [i+1, img.files.length]);
+        const filenaam = await getPostFotoToFolder(file, [i + 1, img.files.length]);
         // console.log(filenaam);
         allPaths = await GetPostFotoToDB(filenaam);
         // console.log(tekst)

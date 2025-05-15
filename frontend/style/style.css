@@ -210,6 +210,12 @@ svg {
     padding-top: 2rem;
 }
 
+.c-loading{
+    font-size: .75rem;
+    color: #a0c2ff;
+    font-style: italic;
+}
+
 @media (width < 912px) {
 
     *,
