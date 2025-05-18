@@ -167,6 +167,7 @@ const addFotoTekst = async () => {
   console.log(img.files);
 
   if ((tekst || img.value) != '') {
+    document.querySelector('.js-buttons__add-back').classList.add('u-hide');
     if (img.value != '') {
       let allPaths;
       for (let i = 0; i < img.files.length; i++) {
@@ -195,6 +196,7 @@ const addFotoTekst = async () => {
     } else {
       GetPostTekst(tekst, 0);
     }
+    document.querySelector('.js-buttons__add-back').classList.remove('u-hide');
     callbackAdd();
   }
   listenTo();
