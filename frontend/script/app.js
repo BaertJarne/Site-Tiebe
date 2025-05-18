@@ -205,6 +205,9 @@ const addFotoTekst = async () => {
 const combineFotosWithTekst = () => {
   let tekstenCopy = teksten;
   let fotosCopy = fotos;
+  console.log("copy van de teksten en fotos:")
+  console.log(tekstenCopy)
+  console.log(fotosCopy)
   let fotosToDel = [];
   combined = []; //3de element: 2 == enkel foto links, 2 == enkel foto recht, 4 == enkel tekst rechts, 5 == enkel tekst links , 0 == foto links tekst rechts, 1 == foto rechts tekst links
   for (const tekst of tekstenCopy) {
@@ -212,9 +215,11 @@ const combineFotosWithTekst = () => {
     if (tekst.idfoto != 0) {
       // console.log(fotosCopy)
       // console.log(tekst.idfoto)
-      // console.log(fotosCopy[tekst.idfoto - 1].paden)
+      console.log(fotosCopy[tekst.idfoto - 1].paden)
       combined.push([tekst.tekstje, fotosCopy[tekst.idfoto - 1].paden, random_number]);
+      console.log(combined)
       fotosToDel.push(fotosCopy[tekst.idfoto - 1]);
+      console.log(fotosToDel)
     } else {
       combined.push([tekst.tekstje, '', 3]);
     }
