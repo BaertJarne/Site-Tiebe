@@ -213,13 +213,25 @@ const combineFotosWithTekst = () => {
   for (const tekst of tekstenCopy) {
     const random_number = Math.floor(Math.random() * 2);
     if (tekst.idfoto != 0) {
-      // console.log(fotosCopy)
-      // console.log(tekst.idfoto)
-      console.log(fotosCopy[tekst.idfoto - 1].paden)
-      combined.push([tekst.tekstje, fotosCopy[tekst.idfoto - 1].paden, random_number]);
-      console.log(combined)
-      fotosToDel.push(fotosCopy[tekst.idfoto - 1]);
-      console.log(fotosToDel)
+      let i = 0
+      let fotoInfo = ""
+      while (i < fotosCopy.length) {
+        if (tekst.idfoto == fotosCopy[i].idfoto_paden) {
+          fotoInfo = fotosCopy[i]
+          i = fotosCopy.length
+        }
+        else {
+          i++
+        }
+      }
+      if (fotoInfo != "") {
+        console.log(fotoInfo)
+        console.log(fotoInfo.paden)
+        combined.push([tekst.tekstje, fotoInfo.paden, random_number]);
+        console.log(combined)
+        fotosToDel.push(fotoInfo);
+        console.log(fotosToDel)
+      }
     } else {
       combined.push([tekst.tekstje, '', 3]);
     }
