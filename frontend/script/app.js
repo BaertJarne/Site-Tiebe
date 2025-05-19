@@ -109,7 +109,7 @@ const GetTeksten = async () => {
 };
 
 const getPostFotoToFolder = async (foto, info_fotos) => {
-  document.querySelector('.js-tekst__fotoupload').innerHTML = `Foto('s) worden toegevoegd ${info_fotos[0]}/${info_fotos[1]}. Blijf op deze pagina.`;
+  document.querySelector('.js-tekst__fotoupload').innerHTML = `Foto('s) worden toegevoegd ${info_fotos[0]-1}/${info_fotos[1]}. Blijf op deze pagina.`;
   const formData = new FormData();
   formData.append('file', foto);
   // const body = JSON.stringify({
