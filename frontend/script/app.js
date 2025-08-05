@@ -5,6 +5,7 @@ const socketio = io(lanIP);
 // #region ***  DOM references                           ***********
 let htmlFormAdd;
 let fotos, teksten, combined;
+let responseTekst, responseFoto = false;
 // #endregion
 
 // #region ***  Callback-Visualisation - show___         ***********
@@ -79,6 +80,8 @@ const showFotosTeksten = () => {
 // #region ***  Callback-No Visualisation - callback___  ***********
 const callbackAdd = () => {
   console.log("Foto's en/of tekst is sucsesvol toegevoegd.");
+  responseFoto = false
+  responseTekst = false
   window.location.href = 'index.html';
 };
 
@@ -142,6 +145,7 @@ const GetPostFotoToDB = async (naam) => {
   // console.log(response);
   const json = await response.json().catch((err) => console.error('JSON-error:', err));
   // console.log(json);
+  responseFoto = true
   return json;
 };
 
@@ -160,6 +164,7 @@ const GetPostTekst = async (tekst, idfoto) => {
   const json = await response.json().catch((err) => console.error('JSON-error:', err));
   console.log(`return post tekst:`)
   console.log(json);
+  responseTekst = true
 };
 
 const addFotoTekst = async () => {
@@ -190,16 +195,22 @@ const addFotoTekst = async () => {
         for (let path of allPaths) {
           nieuwID = path.idfoto_paden;
         }
-        
+
         console.log(`Id van connectie foto met de tekst: `)
         console.log(nieuwID)
         GetPostTekst(tekst, nieuwID);
       }
+      else {
+        responseTekst = true
+      }
     } else {
       GetPostTekst(tekst, 0);
+      responseFoto = true
     }
     document.querySelector('.js-buttons__add-back').classList.remove('u-hide');
-    callbackAdd();
+    if ((responseFoto == true) && (responseTekst == true)) {
+      callbackAdd();
+    }
   }
   listenTo();
 };
