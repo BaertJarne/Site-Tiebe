@@ -207,13 +207,16 @@ const addFotoTekst = async () => {
       GetPostTekst(tekst, 0);
       responseFoto = true
     }
-    
+
     console.log(responseFoto)
     console.log(responseTekst)
-    if ((responseFoto == true) && (responseTekst == true)) {
-      document.querySelector('.js-buttons__add-back').classList.remove('u-hide');
-      callbackAdd();
-    }
+    setTimeout(() => {
+      if ((responseFoto == true) && (responseTekst == true)) {
+        document.querySelector('.js-buttons__add-back').classList.remove('u-hide');
+        callbackAdd();
+      }
+    }, 2000);
+
   }
   listenTo();
 };
