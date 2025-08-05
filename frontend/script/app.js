@@ -109,7 +109,7 @@ const GetTeksten = async () => {
 };
 
 const getPostFotoToFolder = async (foto, info_fotos) => {
-  document.querySelector('.js-tekst__fotoupload').innerHTML = `Foto('s) worden toegevoegd ${info_fotos[0]-1}/${info_fotos[1]}. Blijf op deze pagina.`;
+  document.querySelector('.js-tekst__fotoupload').innerHTML = `Foto('s) worden toegevoegd ${info_fotos[0] - 1}/${info_fotos[1]}. Blijf op deze pagina.`;
   const formData = new FormData();
   formData.append('file', foto);
   // const body = JSON.stringify({
@@ -158,7 +158,8 @@ const GetPostTekst = async (tekst, idfoto) => {
     body: body,
   }).catch((err) => console.error('Fetch-error:', err));
   const json = await response.json().catch((err) => console.error('JSON-error:', err));
-  // console.log(json);
+  console.log(`return post tekst:`)
+  console.log(json);
 };
 
 const addFotoTekst = async () => {
@@ -189,8 +190,9 @@ const addFotoTekst = async () => {
         for (let path of allPaths) {
           nieuwID = path.idfoto_paden;
         }
-
-        // console.log(nieuwID)
+        
+        console.log(`Id van connectie foto met de tekst: `)
+        console.log(nieuwID)
         GetPostTekst(tekst, nieuwID);
       }
     } else {

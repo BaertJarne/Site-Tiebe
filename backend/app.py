@@ -89,7 +89,7 @@ async def upload_image(file: UploadFile = File(...)):
         return {"error": str(e)}
 
 @app.post(ENDPOINT + 'fotoToDB/', response_model=dict, status_code=status.HTTP_201_CREATED, summary="Foto toevoegen aan database")
-async def nieuw_fotot(Foto: DTOFotoToDB):
+async def nieuw_foto(Foto: DTOFotoToDB):
     response_id = DataRepository.create_foto_pad(Foto.paden)
     if response_id is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Foto niet gevonden")
